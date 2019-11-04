@@ -5,6 +5,7 @@ into the formats needed to display models in the xeokit viewer.
 
 - IfcConvert (IfcOpenShell)
 - COLLADA2GLTF
+- xeokit-gltf-to-xkt
 - xeokit-metadata
 
 ## Usage
