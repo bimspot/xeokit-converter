@@ -1,7 +1,7 @@
 # xeokit-converter
 
-The image contains all dependencies needed for the [conversion of IFC files][1]
-into the formats needed to display models in the xeokit viewer.
+The image contains all tools needed for the [conversion of IFC files][1]
+to the `xkt` format for the xeokit viewer.
 
 - IfcConvert (IfcOpenShell)
 - COLLADA2GLTF
@@ -29,7 +29,7 @@ xeokit-metadata scene.ifc scene.json
 
 ## Environment
 
-The `IfcConvert` library is availablet through [`bimspot/ifcopenshell`][2].
+The `IfcConvert` library is available through [`bimspot/ifcopenshell`][2].
 The xeokit-converter image is based on the [bionic dotnet runtime][3].
 
 [1]: https://github.com/xeokit/xeokit-gltf-to-xkt
