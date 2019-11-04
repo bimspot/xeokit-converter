@@ -16,7 +16,7 @@ RUN apt-get -qq update && apt-get -qq install -y  \
   git
 
 RUN npm install npm@latest -g
-RUN npm install bimspot/xeokit-gltf-to-xkt#cli -g
+RUN npm install xeokit/xeokit-gltf-to-xkt -g
 
 # Converting tools
 COPY --from=IfcConvert /usr/bin/IfcConvert /usr/bin/IfcConvert
