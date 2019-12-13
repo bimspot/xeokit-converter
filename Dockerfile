@@ -29,7 +29,7 @@ RUN ln -s /usr/lib/COLLADA2GLTF/COLLADA2GLTF-bin /usr/local/bin/COLLADA2GLTF
 RUN rm -rf COLLADA2GLTF-v2.1.5-linux.zip
 
 # IFC metadata
-RUN wget --quiet https://github.com/bimspot/xeokit-metadata/releases/download/0.0.4/xeokit-metadata-linux-x64.tar.gz
+RUN wget --quiet https://github.com/bimspot/xeokit-metadata/releases/download/0.0.5/xeokit-metadata-linux-x64.tar.gz
 RUN tar -zxvf xeokit-metadata-linux-x64.tar.gz
 RUN chmod +x xeokit-metadata-linux-x64/xeokit-metadata
 RUN cp -r xeokit-metadata-linux-x64/ /usr/lib/xeokit-metadata
