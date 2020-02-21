@@ -16,7 +16,7 @@ RUN apt-get -qq update && apt-get -qq install -y  \
   git
 
 RUN npm install npm@latest -g
-RUN npm install xeokit/xeokit-gltf-to-xkt -g
+RUN npm install xeokit/xeokit-gltf-to-xkt#e0dbb76b669880ab0ed597f191de82817438fb92 -g
 
 # Converting tools
 COPY --from=IfcConvert /usr/bin/IfcConvert /usr/bin/IfcConvert
