@@ -15,6 +15,15 @@ RUN apt-get -qq update && apt-get -qq install -y  \
   unzip \
   git
 
+# dotnet 3.1
+RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN apt-get update ;\
+  apt-get install -y apt-transport-https && \
+  apt-get update && \
+  apt-get install -y dotnet-sdk-3.1
+
+# npm xeokit
 RUN npm install npm@latest -g
 RUN npm install xeokit/xeokit-gltf-to-xkt#e0dbb76b669880ab0ed597f191de82817438fb92 -g
 
