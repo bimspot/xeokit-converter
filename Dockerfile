@@ -6,7 +6,7 @@ FROM bimspot/ifcopenshell:bionic-0.6.0 as IfcConvert
 # ----------------------------------------------------------------------------
 # xeokit-converter
 # ----------------------------------------------------------------------------
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2-bionic as xeokit-converter
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1-bionic as xeokit-converter
 
 RUN apt-get -qq update && apt-get -qq install -y  \
   nodejs \
