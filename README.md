@@ -10,6 +10,12 @@ to the `xkt` format for the xeokit viewer.
 
 ## Usage
 
+```
+$ docker pull bimspot/xeokit-converter
+```
+
+See all available tags on [docker hub][5].
+
 Using [`bimspot/xeokit-converter`][4] as a base image, all converter tools are
 available in the `PATH`.
 
@@ -36,3 +42,4 @@ The xeokit-converter image is based on the [bionic dotnet runtime][3].
 [2]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/ifcopenshell
 [3]: mcr.microsoft.com/dotnet/core/runtime:2.2-bionic
 [4]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/xeokit-converter
+[5]: https://hub.docker.com/r/bimspot/xeokit-converter
