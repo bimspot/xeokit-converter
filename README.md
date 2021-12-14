@@ -38,8 +38,19 @@ xeokit-metadata scene.ifc scene.json
 The `IfcConvert` library is available through [`bimspot/ifcopenshell`][2].
 The xeokit-converter image is based on the [bionic dotnet runtime][3].
 
+## Distribution
+
+The image is build locally and pushed to [Docker hub][5] with your own credentials.
+Semver applies.
+
+```
+~ docker build -t bimspot/xeokit-converter:1.3.x .
+~ docker push bimspot/xeokit-converter:1.3.x
+```
+
 [1]: https://github.com/xeokit/xeokit-gltf-to-xkt
 [2]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/ifcopenshell
 [3]: mcr.microsoft.com/dotnet/core/runtime:2.2-bionic
 [4]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/xeokit-converter
 [5]: https://hub.docker.com/r/bimspot/xeokit-converter
+
