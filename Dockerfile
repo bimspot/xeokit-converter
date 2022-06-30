@@ -1,12 +1,7 @@
 # ----------------------------------------------------------------------------
-# IfcConvert container
-# ----------------------------------------------------------------------------
-FROM bimspot/ifcopenshell:bionic-0.6.0 as IfcConvert
-
-# ----------------------------------------------------------------------------
 # xeokit-converter
 # ----------------------------------------------------------------------------
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1-bionic as xeokit-converter
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1-focal as xeokit-converter
 
 RUN apt-get -qq update && apt-get -qq install -y  \
   wget \
@@ -24,14 +19,11 @@ RUN npm install npm@latest -g \
 
 # Converting tools
 
-# Version 0.6.0
-RUN wget --quiet https://s3.amazonaws.com/ifcopenshell-builds/IfcConvert-v0.6.0-517b819-linux64.zip \
-  && unzip -q IfcConvert-v0.6.0-517b819-linux64.zip -d /usr/lib/IfcConvert \
+# Version 0.7.0
+RUN wget --quiet https://s3.amazonaws.com/ifcopenshell-builds/IfcConvert-v0.7.0-e44e03f-linux64.zip \
+  && unzip -q IfcConvert-v0.7.0-e44e03f-linux64.zip -d /usr/lib/IfcConvert \
   && ln -s /usr/lib/IfcConvert/IfcConvert /usr/local/bin/IfcConvert \
-  && rm -rf IfcConvert-v0.6.0-517b819-linux64.zip
-
-# ATTN: Version 0.6.0b (!)
-COPY --from=IfcConvert /usr/local/lib/python3.6/dist-packages/ifcopenshell /usr/local/lib/python3.6/dist-packages/ifcopenshell
+  && rm -rf IfcConvert-v0.7.0-e44e03f-linux64.zip
 
 # Install COLLADA2GLTF
 RUN wget --quiet https://github.com/KhronosGroup/COLLADA2GLTF/releases/download/v2.1.5/COLLADA2GLTF-v2.1.5-linux.zip \
