@@ -19,7 +19,7 @@ RUN apt-get -qq update && apt-get -qq install -y \
 # ----------------------------------------------------------------------------
 # Install IfcOpenShell-python version 0.7.0, python 3.8
 RUN wget --quiet https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-38-v0.7.0-e508fb4-linux64.zip \
-  && unzip -q ifcopenshell-python-38-v0.7.0-e508fb4-linux64.zip -d /usr/local/lib/python3.8/dist-packages/ifcopenshell \
+  && unzip -q ifcopenshell-python-38-v0.7.0-e508fb4-linux64.zip -d /usr/local/lib/python3.8/dist-packages \
   && rm -rf ifcopenshell-python-38-v0.7.0-e508fb4-linux64.zip
 
 # Install IfcConvert version 0.7.0
