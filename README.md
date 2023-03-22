@@ -5,7 +5,7 @@ to the `xkt` format for the xeokit viewer.
 
 - IfcConvert (IfcOpenShell)
 - COLLADA2GLTF
-- xeokit-gltf-to-xkt
+- xeokit-convert
 - xeokit-metadata
 
 ## Usage
