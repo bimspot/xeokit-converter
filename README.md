@@ -26,11 +26,14 @@ IfcConvert -v -y --use-element-guids scene.ifc scene.dae
 echo "Converting DAE to glTF"
 COLLADA2GLTF -v -i scene.dae -o scene.gltf
 
-echo "Converting gltf to xkt"
-gltf2xkt -s scene.gltf -o scene.xkt
-
 echo "Creating metadata json"
 xeokit-metadata scene.ifc scene.json
+
+echo "Converting gltf to xkt"
+xeokit-convert -s scene.gltf -o scene.xkt
+
+echo "Converting gltf to xkt with metadata"
+xeokit-convert -s scene.gltf -m scene.json -o scene.xkt
 ```
 
 ## Environment
@@ -48,7 +51,7 @@ Semver applies.
 ~ docker push bimspot/xeokit-converter:1.3.x
 ```
 
-[1]: https://github.com/xeokit/xeokit-gltf-to-xkt
+[1]: https://github.com/xeokit/xeokit-convert
 [2]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/ifcopenshell
 [3]: mcr.microsoft.com/dotnet/core/runtime:2.2-bionic
 [4]: https://cloud.docker.com/u/bimspot/repository/docker/bimspot/xeokit-converter
