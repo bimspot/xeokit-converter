@@ -9,7 +9,7 @@ RUN apt-get -qq update && apt-get -qq install -y \
   git \
   python3.8 \
   curl \
-  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install nodejs -y \
   && apt autoremove -qq  -y \
   && rm -r /var/lib/apt/lists/*
@@ -34,9 +34,9 @@ RUN wget --quiet https://github.com/KhronosGroup/COLLADA2GLTF/releases/download/
   && ln -s /usr/lib/COLLADA2GLTF/COLLADA2GLTF-bin /usr/local/bin/COLLADA2GLTF \
   && rm -rf COLLADA2GLTF-v2.1.5-linux.zip
 
-# Install xeokit-gltf-to-xkt latest version
-RUN npm install npm@latest -g \
-  && npm install xeokit/xeokit-gltf-to-xkt#35c3378849efca927af948ba0c2a293ca17c2da8 -g
+# Install xeokit-convert 1.0.7 stable version
+RUN npm i @xeokit/xeokit-convert@1.0.7 -g \
+  && npm install commander -g
 
 # Install xeokit-metadata version 1.0.0 
 RUN wget --quiet https://github.com/bimspot/xeokit-metadata/releases/download/1.0.0/xeokit-metadata-linux-x64.tar.gz \
